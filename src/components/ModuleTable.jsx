@@ -1,5 +1,8 @@
 import { moduleAvg } from '../utils/calc';
 
+const inputBaseWCC =
+  'w-[60px] sm:w-[100px] md:w-[96px] px-3 py-2.5 text-right font-mono text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500 transition-shadow';
+
 const inputBase =
   'w-full md:w-24 px-3 py-2 text-right font-mono text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500 transition-shadow';
 const inputDimmed =
@@ -59,7 +62,7 @@ export default function ModuleTable({
                           const v = isNaN(raw) ? 0.1 : Math.max(0.1, raw);
                           onCoefChange(index, v);
                         }}
-                        className={inputBase}
+                        className={inputBaseWCC}
                       />
                     ) : (
                       <span className="text-right text-sm text-slate-700">{module.coef}</span>
@@ -112,7 +115,7 @@ export default function ModuleTable({
                         const v = parseFloat(e.target.value) ?? 0;
                         onWeightChange(index, 'wCC', v);
                       }}
-                      className={inputBase}
+                      className={inputBaseWCC}
                     />
                   </td>
                   <td className="px-4 py-3 align-middle">

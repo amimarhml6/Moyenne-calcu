@@ -234,7 +234,7 @@ function App() {
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
             <div>
               <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
-                Avg Calculator
+                Avg Calculator For CS Students
               </h1>
               <p className="mt-2 max-w-2xl text-sm md:text-base text-slate-500">
                 Plan your semester with clarity. Enter your grades, adjust weights,
