@@ -38,7 +38,7 @@ export default function ModuleTable({
               const wExam = weights[index]?.wExam ?? module.wExam;
               const ccLocked = wExam >= 0.9999;
               const examLocked = wCC >= 0.9999;
-              const cc = ccLocked ? 0 : (grades[index]?.cc ?? 0);
+              const cc = ccLocked ? 2 : (grades[index]?.cc ?? 0);
               const exam = examLocked ? 0 : (grades[index]?.exam ?? 0);
               const avg = moduleAvg(cc, exam, wCC, wExam);
 
@@ -54,12 +54,12 @@ export default function ModuleTable({
                     {onCoefChange ? (
                       <input
                         type="number"
-                        min="0.1"
-                        step="0.1"
+                        min="0"
+                        step="1"
                         value={module.coef}
                         onChange={(e) => {
                           const raw = parseFloat(e.target.value);
-                          const v = isNaN(raw) ? 0.1 : Math.max(0.1, raw);
+                          const v = isNaN(raw) ? 0 : Math.max(0, raw);
                           onCoefChange(index, v);
                         }}
                         className={inputBaseWCC}
@@ -73,7 +73,7 @@ export default function ModuleTable({
                       type="number"
                       min="0"
                       max="20"
-                      step="0.01"
+                      step="0.25"
                       value={cc}
                       disabled={ccLocked}
                       onChange={(e) => {
@@ -91,7 +91,7 @@ export default function ModuleTable({
                       type="number"
                       min="0"
                       max="20"
-                      step="0.01"
+                      step="0.25"
                       value={exam}
                       disabled={examLocked}
                       onChange={(e) => {
@@ -109,7 +109,7 @@ export default function ModuleTable({
                       type="number"
                       min="0"
                       max="1"
-                      step="0.01"
+                      step="0.1"
                       value={wCC}
                       onChange={(e) => {
                         const v = parseFloat(e.target.value) ?? 0;
@@ -123,7 +123,7 @@ export default function ModuleTable({
                       type="number"
                       min="0"
                       max="1"
-                      step="0.01"
+                      step="0.1"
                       value={wExam}
                       onChange={(e) => {
                         const v = parseFloat(e.target.value) ?? 0;
