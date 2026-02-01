@@ -18,7 +18,6 @@ Une application web moderne permettant aux étudiants en informatique de **calcu
 - 🏆 Classement des **meilleurs** et **moins bons** modules
 - 📊 Analyse détaillée des résultats
 - 🧑‍🏫 Conseils personnalisés selon la moyenne
-- 💾 Sauvegarde automatique via **localStorage**
 - 📱 Interface responsive et moderne
 
 ---
